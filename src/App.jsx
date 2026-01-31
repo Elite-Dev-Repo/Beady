@@ -17,22 +17,22 @@ function App() {
     {
       name: "Instagram",
       icon: <i className="fa-brands fa-instagram"></i>,
-      url: "https://www.instagram.com/",
+      url: "https://www.instagram.com/_thatbeadchef",
     },
     {
       name: "WhatsApp",
       icon: <i className="fa-brands fa-whatsapp"></i>,
-      url: "https://wa.me/2348100000000",
+      url: "https://wa.me/message/3UEFZVMXCKJXA1",
     },
     {
       name: "X",
       icon: <i className="fa-brands fa-x-twitter"></i>,
-      url: "https://www.twitter.com/",
+      url: "https://www.x.com/_thatbeadchef",
     },
     {
-      name: "LinkedIn",
-      icon: <i className="fa-brands fa-linkedin"></i>,
-      url: "https://www.linkedin.com/",
+      name: "Tiktok",
+      icon: <i className="fa-brands fa-tiktok"></i>,
+      url: "https://www.tiktok.com/@_thatbeadchef",
     },
   ];
   const featured = [
@@ -83,7 +83,7 @@ function App() {
     <>
       <Nav />
 
-      <header className="head bg-white relative">
+      <header className="head bg-white relative top-[-80px]">
         <div className="cont flex h-full w-full">
           <div className="flex  w-full items-end mb-[3%]">
             <div className="flex flex-col gap-3 ">

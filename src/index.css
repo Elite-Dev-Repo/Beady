@@ -113,7 +113,7 @@ body {
 .head {
   position: relative;
   width: 100vw;
-  height: calc(100vh - 80px);
+  height: 100vh;
   background-color: #e5ded8;
   z-index: 2;
 }
@@ -185,4 +185,33 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+}
+
+.nav-links::after {
+  content: "";
+  width: 0%;
+  height: 1px;
+  background-color: #f2f2f2;
+  left: -5px;
+  bottom: -5px;
+
+  position: absolute;
+  transition: all 0.5s ease-in-out;
+}
+.nav-links:hover::after {
+  width: 120%;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-foreground);
+  border-radius: 5px;
 }

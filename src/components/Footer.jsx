@@ -3,7 +3,7 @@ import { ChevronRight } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="w-screen h-[40vh] bg-mine flex flex-col">
+    <footer className="w-screen h-[40vh] bg-mine flex flex-col border-t-2 border-foreground/20">
       <div className="opacity-0 h-0.5 overflow-hidden">
         <a href="https://www.freepik.com/free-photo/portrait-ethnic-curly-young-woman-colored-background_4783790.htm#fromView=search&page=1&position=4&uuid=168944dc-d8ed-4a3c-bb8a-9715c47c6728&query=dark+lady">
           Image by freepik
@@ -46,7 +46,7 @@ const Footer = () => {
           <a href="https://oyenekanemmanuel.xyz" target="_blank">
             Developed by Elite DEV
           </a>{" "}
-          <span>{new Date().getFullYear()} | All rights Reserved. | Beady</span>
+          <span> © {new Date().getFullYear()} | All rights Reserved.</span>
         </p>
       </div>
     </footer>
