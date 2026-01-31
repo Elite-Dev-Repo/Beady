@@ -4,6 +4,14 @@ import { ChevronRight } from "lucide-react";
 const Footer = () => {
   return (
     <footer className="w-screen h-[40vh] bg-mine flex flex-col">
+      <div className="opacity-0 h-0.5 overflow-hidden">
+        <a href="https://www.freepik.com/free-photo/portrait-ethnic-curly-young-woman-colored-background_4783790.htm#fromView=search&page=1&position=4&uuid=168944dc-d8ed-4a3c-bb8a-9715c47c6728&query=dark+lady">
+          Image by freepik
+        </a>
+        <a href="https://www.freepik.com/free-photo/young-beautiful-african-girl-smiling-dark-wall_7959368.htm#fromView=search&page=1&position=1&uuid=168944dc-d8ed-4a3c-bb8a-9715c47c6728&query=dark+lady">
+          Image by cookie_studio on Freepik
+        </a>
+      </div>
       <div className="cont flex w-full h-full items-center justify-between gap-5 ">
         <a href="" className="">
           Logo

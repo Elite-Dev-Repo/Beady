@@ -1,6 +1,17 @@
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
-import { ArrowRight, ShieldCheck, Gem, Sparkles } from "lucide-react";
+import {
+  ArrowRight,
+  ShieldCheck,
+  Gem,
+  Sparkles,
+  ShoppingCart,
+} from "lucide-react";
+
+import image1 from "./assets/image(1).jpeg";
+import image6 from "./assets/image(6).jpg";
+import image3 from "./assets/image(3).webp";
+import MyAvatar from "./components/myavatar";
 function App() {
   const socials = [
     {
@@ -29,22 +40,43 @@ function App() {
       id: 1,
       name: "The Pearl Tote",
       price: "₦45,000",
-      img: "https://placehold.co/400x500?text=Pearl+Tote",
+      img: image1,
       tag: "Bestseller",
     },
     {
       id: 2,
       name: "Midnight Clutch",
       price: "₦32,000",
-      img: "https://placehold.co/400x500?text=Midnight+Clutch",
+      img: image6,
       tag: "New Arrival",
     },
     {
       id: 3,
       name: "Crystal Mini",
       price: "₦28,500",
-      img: "https://placehold.co/400x500?text=Crystal+Mini",
+      img: image3,
       tag: "Limited",
+    },
+  ];
+
+  const testimonials = [
+    {
+      id: 1,
+      name: "Amara Okezie",
+      text: "The craftsmanship is unparalleled. I wore my Pearl Tote to a gala and haven't stopped receiving compliments since. It's a literal piece of art.",
+      location: "Lagos, NG",
+    },
+    {
+      id: 2,
+      name: "Sarah Jenkins",
+      text: "I love how these bags bridge the gap between vintage charm and modern fashion. The quality of the beads feels incredibly premium.",
+      location: "London, UK",
+    },
+    {
+      id: 3,
+      name: "Elena Rodriguez",
+      text: "Usually, beaded bags are fragile, but these are built to last. The structural integrity is impressive for something so delicate looking.",
+      location: "New York, USA",
     },
   ];
   return (
@@ -127,7 +159,7 @@ function App() {
                     <img
                       src={product.img}
                       alt={product.name}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
                     />
                     <span className="absolute top-4 left-4 bg-foreground text-primary text-xs px-3 py-1 uppercase tracking-widest font-bold">
                       {product.tag}
@@ -142,7 +174,7 @@ function App() {
                     </div>
 
                     <button className="flex items-center justify-center gap-2 mt-4 w-full py-3 border border-foreground hover:bg-foreground hover:text-primary transition-colors duration-300 uppercase text-xs tracking-widest font-bold">
-                      View Details
+                      Order on Whatsapp <ShoppingCart />
                     </button>
                   </div>
                 </div>
@@ -200,13 +232,54 @@ function App() {
           </div>
         </section>
         {/* TESTIMONIALS */}
-        <div className="section w-screen h-screen">
+        <div className="section w-screen h-auto py-20 bg-white">
           <div className="cont">
-            <h3 className=" relative und text-left pt-9 text-2xl font-medium">
+            <h3 className="relative und text-left pt-9 text-2xl font-medium">
               Testimonials
             </h3>
+            <div className="mt-9 mb-12 flex items-center justify-between flex-wrap gap-4">
+              <div>
+                <p className="text-md font-medium">
+                  What our lovely customers say
+                </p>
+                <div className="mt-2">
+                  <MyAvatar />
+                </div>
+              </div>
+              <div className="text-sm font-medium tracking-widest uppercase opacity-60">
+                4.9/5 Rating based on 200+ Reviews
+              </div>
+            </div>
 
-            <div className="grid grid-cols-3"></div>
+            {/* The Testimonial Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {testimonials.map((t) => (
+                <div
+                  key={t.id}
+                  className="bg-mine p-8 border-l-6 border-foreground hover:border-l-12 transition-all duration-300 flex flex-col justify-between"
+                >
+                  <div>
+                    <div className="flex gap-1 mb-4 text-[10px]">
+                      {"★★★★★".split("").map((s, i) => (
+                        <span key={i} className="text-foreground">
+                          ★
+                        </span>
+                      ))}
+                    </div>
+                    <p className="text-foreground/80 leading-relaxed italic">
+                      "{t.text}"
+                    </p>
+                  </div>
+
+                  <div className="mt-8">
+                    <h4 className="font-bold text-sm uppercase tracking-wider">
+                      {t.name}
+                    </h4>
+                    <p className="text-xs opacity-50">{t.location}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </main>
