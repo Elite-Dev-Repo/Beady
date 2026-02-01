@@ -113,7 +113,7 @@ body {
 .head {
   position: relative;
   width: 100vw;
-  height: 100vh;
+  height: calc(100vh - 80px);
   background-color: #e5ded8;
   z-index: 2;
 }
