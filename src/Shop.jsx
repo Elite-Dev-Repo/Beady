@@ -40,10 +40,12 @@ const ProductCard = ({ product }) => {
   const [isAdded, setIsAdded] = useState(false);
 
   const handleOrder = () => {
+    const phoneNumber = "2349133617435";
     const message = `Hello BeadChef, I want to order ${quantity} unit(s) of the ${product.name}. Total: ₦${(product.price * quantity).toLocaleString()}`;
-    const whatsappUrl = `https://wa.me/message/3UEFZVMXCKJXA1?text=${message}`;
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
     setIsAdded(true);
+
     // Visual feedback delay
     setTimeout(() => {
       window.open(whatsappUrl, "_blank");
@@ -67,7 +69,7 @@ const ProductCard = ({ product }) => {
           </span>
         )}
       </div>
-      <Toaster position="top-center" richColors duration={1000} />
+
       {/* Product Details */}
       <div className="mt-5 space-y-4">
         <div className="flex justify-between items-start gap-2">
@@ -97,16 +99,17 @@ const ProductCard = ({ product }) => {
 
           {/* Action Button */}
           <button
-            onClick={handleOrder}
-            className={`flex flex-1 items-center justify-center gap-2 py-4 px-6 uppercase text-[10px] tracking-[0.2em] font-bold transition-all active:scale-95 ${
-              isAdded
-                ? toast.success("Order sent successfully")
-                : "bg-foreground text-primary hover:opacity-90"
-            }`}
+            onClick={() => {
+              toast.loading("Redirecting to WhatsApp...");
+              setTimeout(() => {
+                handleOrder();
+              }, 100);
+            }}
+            className={`flex flex-1 items-center justify-center gap-2 py-4 px-6 uppercase text-[10px] tracking-[0.2em] font-bold transition-all active:scale-95 bg-foreground text-primary hover:opacity-90`}
           >
             {isAdded ? (
               <>
-                Order Sent <Check size={16} />
+                Order Loading <Check size={16} />
               </>
             ) : (
               <>
@@ -136,6 +139,7 @@ const Shop = () => {
   return (
     <div className="min-h-screen flex flex-col bg-white">
       <Nav />
+      <Toaster position="top-center" richColors duration={1000} />
 
       {/* Breadcrumb / Back Navigation */}
       <div className="sticky top-[80px] z-30 bg-white/80 backdrop-blur-md border-b border-gray-100">
