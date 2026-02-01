@@ -66,21 +66,22 @@ function App() {
   const testimonials = [
     {
       id: 1,
-      name: "Amara Okezie",
+      name: "Elite DEV",
       text: "The craftsmanship is unparalleled. I wore my Pearl Tote to a gala and haven't stopped receiving compliments since.",
       location: "Lagos, NG",
     },
     {
       id: 2,
-      name: "Sarah Jenkins",
+      name: "John Olaoluwa",
       text: "I love how these bags bridge the gap between vintage charm and modern fashion. The quality feels premium.",
-      location: "London, UK",
+      location: "Abuja, NG",
     },
+
     {
-      id: 3,
-      name: "Elena Rodriguez",
-      text: "Usually, beaded bags are fragile, but these are built to last. The structural integrity is impressive.",
-      location: "New York, USA",
+      id: 4,
+      name: "Amara Okezie",
+      text: "Usually, I used to think beaded bags were fragile, but these are built to last. The structural integrity is impressive.",
+      location: "Abia, NG",
     },
   ];
 

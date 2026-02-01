@@ -78,7 +78,7 @@ const Gallery = () => {
               onClick={() => navigate(-1)}
               className="flex items-center gap-2 text-sm font-medium hover:gap-4 transition-all duration-300 group"
             >
-              <ArrowLeft size={18} className="group-hover:text-primary" />
+              <ArrowLeft size={18} className="group-hover:text-foreground" />
               <span className="uppercase tracking-widest text-[10px]">
                 Go Back
               </span>

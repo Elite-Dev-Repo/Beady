@@ -1,5 +1,5 @@
 import React from "react";
-import { ArrowRight, ChevronRight, Menu, X } from "lucide-react";
+import { ShoppingCart, Menu, X } from "lucide-react";
 import { useState } from "react";
 
 import beadchef from "../assets/beadchef.png";
@@ -47,11 +47,11 @@ function Nav() {
 
         <div className="hidden lg:block">
           <a
-            href="https://wa.me/message/3UEFZVMXCKJXA1"
-            target="_blank"
+            href="/shop"
             className="px-4 py-2 bg-white text-foreground rounded-sm flex items-center gap-2"
           >
-            View Catalog <ChevronRight />
+            Shop
+            <ShoppingCart />
           </a>
         </div>
 
@@ -83,10 +83,10 @@ function Nav() {
           ))}
           <li className="mt-4">
             <a
-              href="https://wa.me/message/3UEFZVMXCKJXA1"
+              href="/shop"
               className="px-8 py-4 bg-white text-foreground rounded-sm flex items-center gap-2 font-bold uppercase tracking-widest text-sm"
             >
-              View Catalog <ChevronRight />
+              Shop <ShoppingCart />
             </a>
           </li>
         </ul>

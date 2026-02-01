@@ -5,6 +5,7 @@ import "./index.css";
 import App from "./App.jsx";
 import Gallery from "./Gallery.jsx";
 import Contact from "./Contact.jsx";
+import Shop from "./Shop.jsx";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
   {
     path: "/contact",
     element: <Contact />,
+  },
+  {
+    path: "/shop",
+    element: <Shop />,
   },
 ]);
 
