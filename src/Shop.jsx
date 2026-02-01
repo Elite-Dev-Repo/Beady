@@ -53,7 +53,7 @@ const ProductCard = ({ product }) => {
   return (
     <div className="group flex flex-col bg-mine p-4 rounded-sm border border-transparent hover:border-foreground/10 transition-all duration-300">
       {/* Product Image */}
-      <div className="relative aspect-[5/4] overflow-hidden bg-white/50 rounded-sm">
+      <div className="relative aspect-[4/5] overflow-hidden bg-white/50 rounded-sm">
         <img
           src={product.img}
           alt={product.name}
@@ -80,9 +80,6 @@ const ProductCard = ({ product }) => {
         <div className="flex gap-3">
           {/* Quantity Selector */}
           <div className="flex items-center justify-between bg-white px-3 py-2 border border-foreground/10 rounded-sm">
-            <label className="text-[10px] uppercase font-bold opacity-50">
-              Quantity
-            </label>
             <select
               value={quantity}
               onChange={(e) => setQuantity(parseInt(e.target.value))}
