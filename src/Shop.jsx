@@ -128,9 +128,9 @@ const Shop = () => {
   const navigate = useNavigate();
 
   const products = [
-    { id: 1, name: "The Pearl Tote", price: 45000, img: image1, stock: 5 },
-    { id: 2, name: "Midnight Clutch", price: 32000, img: image6, stock: 3 },
-    { id: 3, name: "Crystal Mini", price: 28500, img: image3, stock: 10 },
+    { id: 1, name: "The Executive Bag", price: 39999, img: image22, stock: 5 },
+    { id: 2, name: "Bag Gorgeous", price: 25000, img: image6, stock: 3 },
+    { id: 3, name: "The Daisy Bag", price: 25000, img: image13, stock: 10 },
     { id: 4, name: "Golden Aura", price: 35000, img: image2, stock: 4 },
     { id: 5, name: "Noir Evening Bag", price: 30000, img: image4, stock: 6 },
     { id: 6, name: "Oceanic Beads", price: 27500, img: image5, stock: 8 },
