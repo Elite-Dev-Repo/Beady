@@ -18,8 +18,9 @@
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "react-router-dom": "^7.13.0",
-    "sonner": "^1.7.0",
-    "tailwind-merge": "^3.4.0"
+    "sonner": "^1.7.4",
+    "tailwind-merge": "^3.4.0",
+    "toaster": "^0.1.2"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",

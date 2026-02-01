@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { ArrowLeft, ShoppingBag, Check } from "lucide-react";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
+import { Toaster, toast } from "sonner";
 
 // Asset Imports
 import image1 from "./assets/image(1).jpeg";
@@ -40,7 +41,7 @@ const ProductCard = ({ product }) => {
 
   const handleOrder = () => {
     const message = `Hello BeadChef, I want to order ${quantity} unit(s) of the ${product.name}. Total: ₦${(product.price * quantity).toLocaleString()}`;
-    const whatsappUrl = `https://wa.me/message/3UEFZVMXCKJXA1?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/message/3UEFZVMXCKJXA1?text=${message}`;
 
     setIsAdded(true);
     // Visual feedback delay
@@ -58,6 +59,7 @@ const ProductCard = ({ product }) => {
           src={product.img}
           alt={product.name}
           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+          loading="lazy"
         />
         {product.stock <= 2 && (
           <span className="absolute top-3 right-3 bg-red-500 text-white text-[9px] px-2 py-1 uppercase font-bold tracking-tighter">
@@ -65,7 +67,7 @@ const ProductCard = ({ product }) => {
           </span>
         )}
       </div>
-
+      <Toaster position="top-center" richColors duration={1000} />
       {/* Product Details */}
       <div className="mt-5 space-y-4">
         <div className="flex justify-between items-start gap-2">
@@ -98,7 +100,7 @@ const ProductCard = ({ product }) => {
             onClick={handleOrder}
             className={`flex flex-1 items-center justify-center gap-2 py-4 px-6 uppercase text-[10px] tracking-[0.2em] font-bold transition-all active:scale-95 ${
               isAdded
-                ? "bg-green-600 text-white"
+                ? toast.success("Order sent successfully")
                 : "bg-foreground text-primary hover:opacity-90"
             }`}
           >
