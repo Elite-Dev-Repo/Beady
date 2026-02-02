@@ -12,11 +12,11 @@ import {
 
 import image1 from "./assets/image(1).jpeg";
 import image6 from "./assets/image(6).jpg";
-import image3 from "./assets/image(3).webp";
-import image13 from "./assets/image(13).jpeg";
-import image22 from "./assets/image(22).jpeg";
-import MyAvatar from "./components/myavatar";
 
+import image13 from "./assets/image(13).jpeg";
+
+import MyAvatar from "./components/myavatar";
+import { motion } from "framer-motion";
 function App() {
   const socials = [
     {
@@ -96,23 +96,40 @@ function App() {
         <div className="cont w-full">
           <div className="  max-sm:h-[80vh] flex w-full items-end md:items-end mb-[10%] md:mb-[3%]">
             <div className=" flex flex-col gap-4 md:gap-6">
-              <h3 className="text-5xl md:text-7xl font-medium leading-tight">
+              <motion.h3
+                initial={{ opacity: 0, y: -50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                className="text-5xl md:text-7xl font-medium leading-tight"
+              >
                 Be Stylish <br className="hidden md:block" /> & Modish.
-              </h3>
-              <p className="w-full md:w-[50%] text-foreground text-lg md:text-[1.1em] leading-relaxed">
+              </motion.h3>
+              <motion.p
+                initial={{ opacity: 0, scale: 0 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5 }}
+                className="w-full md:w-[50%] text-foreground text-lg md:text-[1.1em] leading-relaxed"
+              >
                 <span className="font-medium">
                   Modern silhouettes, timeless textures.
                 </span>{" "}
                 Reimagining a classic craft for the contemporary closet. Our
                 bags bring a touch of vintage soul to your daily rotation.
-              </p>
-              <a
-                href="https://wa.me/message/3UEFZVMXCKJXA1"
-                target="_blank"
-                className="flex items-center justify-center md:justify-start gap-2 px-6 py-4 bg-foreground text-primary rounded-sm w-full md:w-fit transition-transform active:scale-95"
+              </motion.p>
+              <motion.div
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5 }}
+                className=""
               >
-                Order on Whatsapp <ArrowRight size={20} />
-              </a>
+                <a
+                  href="https://wa.me/message/3UEFZVMXCKJXA1"
+                  target="_blank"
+                  className="flex items-center justify-center md:justify-start gap-2 px-6 py-4 bg-foreground text-primary rounded-sm w-full md:w-fit transition-transform active:scale-95"
+                >
+                  Order on Whatsapp <ArrowRight size={20} />
+                </a>
+              </motion.div>
             </div>
           </div>
         </div>
@@ -141,7 +158,10 @@ function App() {
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
               {featured.map((product) => (
-                <div
+                <motion.div
+                  initial={{ opacity: 0, scale: 0 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.5 }}
                   key={product.id}
                   className="group flex flex-col bg-mine p-4 rounded-sm"
                 >
@@ -166,7 +186,7 @@ function App() {
                       Order on Whatsapp <ShoppingCart size={18} />
                     </button>
                   </div>
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>
@@ -179,14 +199,24 @@ function App() {
         >
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 items-center">
-              <div className="relative group overflow-hidden rounded-sm order-2 lg:order-1">
+              <motion.div
+                initial={{ x: -50, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                transition={{ duration: 0.5 }}
+                className="relative group overflow-hidden rounded-sm order-2 lg:order-1"
+              >
                 <img
                   src={precious}
                   alt="The Artisan"
                   className="w-full h-auto object-cover grayscale-30 transition duration-700"
                 />
-              </div>
-              <div className="flex flex-col space-y-6 md:space-y-8 order-1 lg:order-2">
+              </motion.div>
+              <motion.div
+                initial={{ x: 50, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                transition={{ duration: 0.5 }}
+                className="flex flex-col space-y-6 md:space-y-8 order-1 lg:order-2"
+              >
                 <h3 className="text-3xl md:text-5xl font-serif leading-tight italic">
                   Crafted with Intention. <br />
                   <span className="not-italic">Carried with Pride.</span>
@@ -212,7 +242,7 @@ function App() {
                     This is slow fashion, refined.
                   </p>
                 </div>
-              </div>
+              </motion.div>
             </div>
           </div>
         </section>
@@ -241,13 +271,19 @@ function App() {
                   desc: "Seamlessly transition from casual brunch to elegant soirées.",
                 },
               ].map((item, i) => (
-                <div key={i} className="flex flex-col gap-4 items-start">
+                <motion.div
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5 }}
+                  key={i}
+                  className="flex flex-col gap-4 items-start"
+                >
                   <div className="w-12 h-12 flex items-center justify-center bg-foreground text-primary rounded-full">
                     {item.icon}
                   </div>
                   <h4 className="text-xl font-semibold">{item.title}</h4>
                   <p className="text-gray-600 leading-relaxed">{item.desc}</p>
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>
@@ -264,7 +300,13 @@ function App() {
                 <p className="text-md font-medium mb-2">
                   What our lovely customers say
                 </p>
-                <MyAvatar />
+                <motion.div
+                  initial={{ opacity: 0, x: -50 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  <MyAvatar />
+                </motion.div>
               </div>
               <div className="text-[10px] md:text-sm font-medium tracking-[0.2em] uppercase opacity-60 bg-mine py-2 px-4 w-fit">
                 4.9/5 Rating • 200+ Reviews
@@ -272,7 +314,10 @@ function App() {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {testimonials.map((t) => (
-                <div
+                <motion.div
+                  initial={{ opacity: 0, y: -50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5 }}
                   key={t.id}
                   className="bg-mine p-6 md:p-8 border-l-4 border-foreground flex flex-col justify-between"
                 >
@@ -292,7 +337,7 @@ function App() {
                     </h4>
                     <p className="text-[10px] opacity-50">{t.location}</p>
                   </div>
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>
