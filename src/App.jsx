@@ -13,6 +13,8 @@ import {
 import image1 from "./assets/image(1).jpeg";
 import image6 from "./assets/image(6).jpg";
 import image3 from "./assets/image(3).webp";
+import image13 from "./assets/image(13).jpeg";
+import image22 from "./assets/image(22).jpeg";
 import MyAvatar from "./components/myavatar";
 
 function App() {
@@ -42,23 +44,23 @@ function App() {
   const featured = [
     {
       id: 1,
-      name: "The Pearl Tote",
-      price: "45,000",
+      name: "The Executive Bag",
+      price: "39,999",
       img: image1,
       tag: "Bestseller",
     },
     {
       id: 2,
-      name: "Midnight Clutch",
-      price: "32,000",
+      name: "Bag Gorgeous",
+      price: "25,000",
       img: image6,
       tag: "New Arrival",
     },
     {
       id: 3,
-      name: "Crystal Mini",
-      price: "28,500",
-      img: image3,
+      name: "The Daisy Bag",
+      price: "25,000",
+      img: image13,
       tag: "Limited",
     },
   ];
@@ -157,7 +159,7 @@ function App() {
                     <div className="flex justify-between items-center">
                       <h4 className="text-xl font-medium">{product.name}</h4>
                       <p className="font-semibold text-lg">
-                        ₦ <span className="blur-[3px]">{product.price}</span>
+                        ₦ <span className="">{product.price}</span>
                       </p>
                     </div>
                     <button className="flex items-center justify-center gap-2 mt-4 w-full py-4 border border-foreground bg-transparent hover:bg-foreground hover:text-primary transition-all uppercase text-xs tracking-widest font-bold">
