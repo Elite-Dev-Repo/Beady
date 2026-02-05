@@ -31,7 +31,6 @@ import image22 from "./assets/image(22).jpeg";
 import image23 from "./assets/image(23).jpeg";
 import image24 from "./assets/image(24).jpeg";
 import image25 from "./assets/image(25).jpeg";
-import image26 from "./assets/image(26).jpeg";
 import image27 from "./assets/image(27).jpeg";
 
 // 1. PRODUCT CARD SUB-COMPONENT
